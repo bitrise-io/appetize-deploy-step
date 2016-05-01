@@ -2,6 +2,9 @@
 
 THIS_SCRIPTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+# Download the binary
+wget "https://github.com/dag-io/appetize-deploy/releases/download/0.1.4/appetize-deploy.phar"
+
 source "${THIS_SCRIPTDIR}/_bash_utils/utils.sh"
 source "${THIS_SCRIPTDIR}/_bash_utils/formatted_output.sh"
 
