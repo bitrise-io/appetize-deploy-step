@@ -24,7 +24,7 @@ inputs:
       description: "The full path to the application file (.app or .apk)"
       is_expand: true
       is_required: true
-  - platform:
+  - platform: "ios"
     opts:
       title: "Platform"
       summary: "Is your app an Android or iOS app ?"
