@@ -48,6 +48,15 @@ inputs:
       description: "The public key in case you want to deploy this to build to an existing app"
       is_expand: true
       is_required: false
+  - protected_by_account: "1"
+    opts:
+      title: "Protect the app?"
+      description: |-
+        You might want to restric access to the app:
+        * 0 - Don't protect
+        * 1 - Protect it
+      value_options: ["0", "1"]
+      is_required: true
 outputs:
   - APPETIZE_APP_URL:
     opts:

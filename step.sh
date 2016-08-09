@@ -3,7 +3,7 @@
 THIS_SCRIPTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # Download the binary
-wget "https://github.com/dag-io/appetize-deploy/releases/download/0.1.4/appetize-deploy.phar" -P $THIS_SCRIPTDIR -q
+wget "https://github.com/dag-io/appetize-deploy/releases/download/0.1.5/appetize-deploy.phar" -P $THIS_SCRIPTDIR -q
 
 source "${THIS_SCRIPTDIR}/_bash_utils/utils.sh"
 source "${THIS_SCRIPTDIR}/_bash_utils/formatted_output.sh"
@@ -26,6 +26,12 @@ fi
 if [ -z "${appetize_token}" ] ; then
 	write_section_to_formatted_output "# Error"
 	write_section_start_to_formatted_output '* Required input `$appetize_token` not provided!'
+	exit 1
+fi
+
+if [ -z "${protected_by_account}" ] ; then
+	write_section_to_formatted_output "# Error"
+	write_section_start_to_formatted_output '* Required input `$protected_by_account` not provided!'
 	exit 1
 fi
 
