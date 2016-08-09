@@ -3,7 +3,7 @@
 THIS_SCRIPTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # Download the binary
-wget "https://github.com/dag-io/appetize-deploy/releases/download/0.1.5/appetize-deploy.phar" -P $THIS_SCRIPTDIR -q
+wget "https://github.com/dag-io/appetize-deploy/releases/download/0.1.6/appetize-deploy.phar" -P $THIS_SCRIPTDIR -q
 
 source "${THIS_SCRIPTDIR}/_bash_utils/utils.sh"
 source "${THIS_SCRIPTDIR}/_bash_utils/formatted_output.sh"
