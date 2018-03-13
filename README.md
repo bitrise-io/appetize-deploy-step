@@ -13,3 +13,7 @@ added to your `.bitrise.secrets.yml` file!*
 ## Share your own Step
 
 You can share your Step or step version with the [bitrise CLI](https://github.com/bitrise-io/bitrise). Just run `bitrise share` and follow the guide it prints.
+
+## Bin
+
+The source for `appetize-deploy.phar` can be found in https://github.com/bitrise-community/appetize-deploy
