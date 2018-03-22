@@ -15,7 +15,6 @@ host_os_tags:
 deps:
   apt_get:
   - name: php7.0
-run_if: .IsCI | and (not .IsPR)
 inputs:
   - app_path:
     opts:

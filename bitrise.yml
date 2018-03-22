@@ -1,9 +1,53 @@
 format_version: 1.1.0
 default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
 
+app:
+  envs:
+  - SAMPLE_ARTIFACT_URL: $SAMPLE_ARTIFACT_URL
+  - BRANCH: "master"
+
+  - APP_PATH: $APP_PATH
+  - APPETIZE_TOKEN: $APPETIZE_TOKEN
+
 workflows:
   # ----------------------------------------------------------------
   # --- workflows to Share this step into a Step Library
+  
+  test:
+    steps:
+    - script:
+        inputs:
+        - content: |-
+            #!/bin/bash
+            set -ex
+            rm -rf "./_tmp"
+            mkdir -p "./_tmp"
+    - change-workdir:
+        title: Switch working dir to _tmp dir
+        run_if: true
+        inputs:
+        - path: "./_tmp"
+        - is_create_path: true
+    - script:
+        inputs:
+        - content: |-
+            #!/usr/bin/env bash
+            if [[ -z "${SAMPLE_ARTIFACT_URL}" ]]; then
+              echo "error: there is no SAMPLE_ARTIFACT_URL env var specified"
+              exit 1
+            elif [[ -z "${COMMIT}" && -z "${BRANCH}" ]]; then
+              echo "error: can't checkout: there is no BRANCH or COMMIT env var specified"
+              exit 1
+            fi
+            git init
+            git remote add origin "${SAMPLE_ARTIFACT_URL}"
+            git fetch || exit 1
+            [[ -n "${COMMIT}" ]] && git checkout "${COMMIT}" || git checkout "${BRANCH}"
+    - path::./:
+        inputs:
+        - app_path: $APP_PATH
+        - appetize_token: $APPETIZE_TOKEN
+
   share-this-step:
     envs:
       # if you want to share this step into a StepLib
