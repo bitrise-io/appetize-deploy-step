@@ -1,4 +1,4 @@
-# Post JIRA comment with build details step
+# Appetize.io deploy Bitrise step
 
 ## How to use this Step
 
