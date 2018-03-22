@@ -3,10 +3,10 @@ default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
 
 app:
   envs:
-  - SAMPLE_ARTIFACT_URL: $SAMPLE_ARTIFACT_URL
+  - SAMPLE_ARTIFACT_URL: https://github.com/bitrise-samples/sample-artifacts.git
   - BRANCH: "master"
+  - APP_PATH: "./apps/XcodeArchiveTest.app"
 
-  - APP_PATH: $APP_PATH
   - APPETIZE_TOKEN: $APPETIZE_TOKEN
 
 workflows:
