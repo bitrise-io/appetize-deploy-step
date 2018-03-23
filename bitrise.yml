@@ -21,7 +21,6 @@ workflows:
             #!/bin/bash
             set -ex
             rm -rf "./_tmp"
-            mkdir -p "./_tmp"
     - change-workdir:
         title: Switch working dir to _tmp dir
         run_if: true
@@ -51,10 +50,10 @@ workflows:
   share-this-step:
     envs:
       # if you want to share this step into a StepLib
-      - MY_STEPLIB_REPO_FORK_GIT_URL: git@github.com:dag-io/bitrise-steplib.git
+      - MY_STEPLIB_REPO_FORK_GIT_URL: git@github.com:bitrise-community/bitrise-steplib.git
       - STEP_ID_IN_STEPLIB: appetize-deploy
       - STEP_GIT_VERION_TAG_TO_SHARE: 0.1.4
-      - STEP_GIT_CLONE_URL: https://github.com/dag-io/appetize-deploy-step.git
+      - STEP_GIT_CLONE_URL: https://github.com/bitrise-community/appetize-deploy-step.git
     description: |-
       If this is the first time you try to share a Step you should
       first call: $ bitrise share
