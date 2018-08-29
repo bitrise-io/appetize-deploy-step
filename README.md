@@ -1,5 +1,7 @@
 # Appetize.io deploy Bitrise step
 
+We have moved this step to https://github.com/bitrise-steplib/steps-appetize-io-deploy repository. It has been rewritten in Golang.
+
 ## How to use this Step
 
 Can be run directly with the [bitrise CLI](https://github.com/bitrise-io/bitrise),
